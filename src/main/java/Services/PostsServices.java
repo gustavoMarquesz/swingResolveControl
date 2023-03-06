@@ -28,13 +28,14 @@ public class PostsServices {
     }
     public static void ListarPosts() {
         if (addPost.size() > 0) {
+            //cria a tela
             JFrame frame = new JFrame("Lista de Posts");
             JPanel panel = new JPanel();
 
             String[] colunas = {"Nome", "Email", "Celular", "Empresa", "CNPJ", "Pro.Fisica-Nome", "Proc.Fisica-CPF", "Dia do cadastro", "Mês do cadastro", "Ano do cadastro"};
             DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
 
-
+            //fiz um loop no array para percorrwer os itens - loop for each
             for (Post posts : addPost) {
                 modelo.addRow(new Object[]{
                         posts.getNome(), posts.getEmail(), posts.getNumeroCelular(),
