@@ -1,14 +1,8 @@
 package Services;
 
-import Models.Post;
-
 import javax.swing.*;
-import java.util.Scanner;
-
 import static Services.PostsServices.CriarPost;
 import static Services.PostsServices.ListarPosts;
-
-
 public class Operacoes {
     public static void TelaInicial(){
 
@@ -23,7 +17,6 @@ public class Operacoes {
             case 3:
                 JOptionPane.showMessageDialog(null, "até mais!");
                 System.exit(0);
-
             default:
                 JOptionPane.showMessageDialog(null, "Opção inválida.");
                 System.out.println("Opção inválida.");
