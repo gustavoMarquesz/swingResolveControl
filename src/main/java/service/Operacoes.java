@@ -1,8 +1,8 @@
-package Services;
+package service;
 
 import javax.swing.*;
-import static Services.PostsServices.CriarPost;
-import static Services.PostsServices.ListarPosts;
+import static service.PostsServices.CriarPost;
+import static service.PostsServices.ListarPosts;
 public class Operacoes {
     public static void TelaInicial(){
 

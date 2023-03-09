@@ -1,10 +1,10 @@
-package Services;
-import Models.Post;
+package service;
+import model.Post;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
-import static Services.Operacoes.TelaInicial;
+import static service.Operacoes.TelaInicial;
 public class PostsServices {
     static ArrayList<Post> addPost = new ArrayList<Post>();
     public static void CriarPost() {
