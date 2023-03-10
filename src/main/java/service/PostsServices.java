@@ -17,10 +17,16 @@ public class PostsServices {
         posts.setEmpresaCnpj(JOptionPane.showInputDialog("CNPJ: "));
         posts.setRazaoFisicaNome(JOptionPane.showInputDialog("Procuração física - nome: "));
         posts.setRazaoFisicaCPF(JOptionPane.showInputDialog("Procuração física - CPF: "));
-        posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
-        posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
-        posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
-
+        try {
+            posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
+            posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
+            posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
+        }catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Você digitou um texto ou valor vazio.");
+            posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
+            posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
+            posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
+        }
         addPost.add(posts);
         JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso");
         TelaInicial();
@@ -34,7 +40,7 @@ public class PostsServices {
             String[] colunas = {"Nome", "Email", "Celular", "Empresa", "CNPJ", "Pro.Fisica-Nome", "Proc.Fisica-CPF", "Dia do cadastro", "Mês do cadastro", "Ano do cadastro"};
             DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
 
-            //fiz um loop no array para percorrwer os itens - loop for each
+            //fiz um loop no array para percorrer os itens - loop for each
             for (Post posts : addPost) {
                 modelo.addRow(new Object[]{
                         posts.getNome(), posts.getEmail(), posts.getNumeroCelular(),
