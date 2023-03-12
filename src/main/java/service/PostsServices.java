@@ -51,6 +51,7 @@ public class PostsServices {
             String[] colunas = {"Nome", "Email", "Celular", "Empresa", "CNPJ", "Pro.Fisica-Nome", "Proc.Fisica-CPF", "Dia do cadastro", "Mês do cadastro", "Ano do cadastro"};
             DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
 
+
             //fiz um loop no array para percorrer os itens - loop for each
             for (Post posts : addPost) {
                 modelo.addRow(new Object[]{
