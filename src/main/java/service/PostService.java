@@ -4,8 +4,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.util.ArrayList;
-import static service.Operacoes.TelaInicial;
-public class PostsServices {
+import static service.MenuInicial.TelaInicial;
+public class PostService {
     static ArrayList<Post> addPost = new ArrayList<>();
     public static void CriarPost() {
 

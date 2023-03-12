@@ -1,9 +1,9 @@
 package service;
 
 import javax.swing.*;
-import static service.PostsServices.CriarPost;
-import static service.PostsServices.ListarPosts;
-public class Operacoes {
+import static service.PostService.CriarPost;
+import static service.PostService.ListarPosts;
+public class MenuInicial {
     public static void TelaInicial() {
         int operacao = 0;
         // adicionado um bloco de try/catch caso o user digite uma string ou valor vazio
