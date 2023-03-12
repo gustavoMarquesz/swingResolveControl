@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import static service.Operacoes.TelaInicial;
 public class PostsServices {
-    static ArrayList<Post> addPost = new ArrayList<Post>();
+    static ArrayList<Post> addPost = new ArrayList<>();
     public static void CriarPost() {
 
         Post posts = new Post();
@@ -50,6 +50,7 @@ public class PostsServices {
 
             String[] colunas = {"Nome", "Email", "Celular", "Empresa", "CNPJ", "Pro.Fisica-Nome", "Proc.Fisica-CPF", "Dia do cadastro", "Mês do cadastro", "Ano do cadastro"};
             DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
+
 
             //fiz um loop no array para percorrer os itens - loop for each
             for (Post posts : addPost) {

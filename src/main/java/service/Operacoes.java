@@ -26,7 +26,6 @@ public class Operacoes {
                 System.exit(0);
             default:
                 JOptionPane.showMessageDialog(null, "Opção inválida.");
-                System.out.println("Opção inválida.");
                 TelaInicial();
                 break;
         }
