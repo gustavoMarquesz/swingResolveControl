@@ -8,6 +8,7 @@ import static service.Operacoes.TelaInicial;
 public class PostsServices {
     static ArrayList<Post> addPost = new ArrayList<Post>();
     public static void CriarPost() {
+
         Post posts = new Post();
         posts.setNome(JOptionPane.showInputDialog("Seu nome: "));
         if(posts.getNome().isEmpty()){
@@ -34,7 +35,7 @@ public class PostsServices {
         }
 
         posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
-        if(posts.getMesCadastro() <= 2000){
+        if(posts.getAnoCadastro() <= 2000){
             posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("O ano precisa ser superior a 2000. \n Insira novamente ")));
         }
         addPost.add(posts);
@@ -64,9 +65,9 @@ public class PostsServices {
             JScrollPane scrollPane = new JScrollPane(tabela);
 
             panel.add(scrollPane);
-            scrollPane.setPreferredSize(new Dimension(1400, 1500));
+            scrollPane.setPreferredSize(new Dimension(1400, 600));
             frame.add(panel);
-            frame.setSize(1800, 1000);
+            frame.setSize(1500, 650);
             frame.setLocationRelativeTo(null);
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setVisible(true);
