@@ -6,7 +6,7 @@ Logo você da de cara com o menu, e começam as validações. Se você seleciona
 
 ![image](https://user-images.githubusercontent.com/29557719/224556426-35265ff3-56f1-4168-ad3e-f8bf53259fc9.png)
 
-Para criar um cadastro é obritaório existir um funcionário para faze-lo. Então se você deixar o campo nome ou email vazios, vai disparar o seguinte erro: 
+Para criar um cadastro é obrigatório existir um funcionário para faze-lo. Então se você deixar o campo nome ou email vazios, vai disparar o seguinte erro: 
 
 ![image](https://user-images.githubusercontent.com/29557719/224556675-4fa75386-1857-42ca-b6ab-4d4be8fac63a.png)
 ![image](https://user-images.githubusercontent.com/29557719/224556708-ce07c0f8-7b60-4272-a667-f123456bdad5.png)
