@@ -9,23 +9,33 @@ public class PostsServices {
     static ArrayList<Post> addPost = new ArrayList<Post>();
     public static void CriarPost() {
         Post posts = new Post();
-
         posts.setNome(JOptionPane.showInputDialog("Seu nome: "));
-        posts.setEmail(JOptionPane.showInputDialog("Seu email: "));
+        if(posts.getNome().isEmpty()){
+            posts.setNome(JOptionPane.showInputDialog("Não aceitamos valor nulo neste campo \n insira seu nome novamente "));
+        }
+        posts.setEmail(JOptionPane.showInputDialog("Seu email "));
+        if(posts.getEmail().isEmpty()){
+            posts.setNome(JOptionPane.showInputDialog("Não aceitamos valor nulo neste campo \n insira seu email novamente "));
+        }
         posts.setNumeroCelular(JOptionPane.showInputDialog("Seu celular: "));
         posts.setEmpresaNome(JOptionPane.showInputDialog("Nome da empresa: "));
         posts.setEmpresaCnpj(JOptionPane.showInputDialog("CNPJ: "));
         posts.setRazaoFisicaNome(JOptionPane.showInputDialog("Procuração física - nome: "));
         posts.setRazaoFisicaCPF(JOptionPane.showInputDialog("Procuração física - CPF: "));
-        try {
-            posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
-            posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
-            posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
-        }catch (NumberFormatException e){
-            JOptionPane.showMessageDialog(null, "Você digitou um texto ou valor vazio.");
-            posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
-            posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
-            posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
+
+        posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
+        if(posts.getDiaCadastro() <=0){
+            posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("O dia precisa ser maior que 0. \n Insira novamente ")));
+        }
+
+        posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
+        if(posts.getMesCadastro() <=0 || posts.getMesCadastro() >12){
+            posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Só existem mês de 1 à 12. \n Insira novamente ")));
+        }
+
+        posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
+        if(posts.getMesCadastro() <= 2000){
+            posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("O ano precisa ser superior a 2000. \n Insira novamente ")));
         }
         addPost.add(posts);
         JOptionPane.showMessageDialog(null, "Cadastro feito com sucesso");
@@ -55,7 +65,6 @@ public class PostsServices {
 
             panel.add(scrollPane);
             scrollPane.setPreferredSize(new Dimension(1400, 1500));
-
             frame.add(panel);
             frame.setSize(1800, 1000);
             frame.setLocationRelativeTo(null);

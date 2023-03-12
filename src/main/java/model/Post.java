@@ -2,6 +2,8 @@ package model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import javax.swing.*;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -15,7 +17,7 @@ public class Post extends  Pessoa{
     private String empresaCnpj;
     private String razaoFisicaNome;
     private String razaoFisicaCPF;
-    public Post(String nome, String email, String numeroCelular, String empresaNome,String empresaCnpj,String razaoFisicaNome, String razaoFisicaCPF ,int diaCadastro, int mesCadastro, int anoCadastro, String textoPost) {
+    public Post(String nome, String email, String numeroCelular, String empresaNome, String empresaCnpj, String razaoFisicaNome, String razaoFisicaCPF, int diaCadastro, int mesCadastro, int anoCadastro, String textoPost) {
         super(nome, email, numeroCelular);
         this.empresaNome = empresaNome;
         this.empresaCnpj = empresaCnpj;
@@ -26,7 +28,6 @@ public class Post extends  Pessoa{
         this.razaoFisicaNome = razaoFisicaNome;
         this.razaoFisicaCPF = razaoFisicaCPF;
     }
-
     public String toString(){
         return  "A empresa, de procuração jurídica " + this.getEmpresaNome() +" de CNPJ: " + this.getEmpresaCnpj()+ " e procuração física "+
                 this.getRazaoFisicaNome()+ " de CPF: "+ this.getRazaoFisicaCPF() +" foi feito por: "+ this.getNome()+"." +
