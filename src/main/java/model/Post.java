@@ -28,11 +28,4 @@ public class Post extends  Pessoa{
         this.razaoFisicaNome = razaoFisicaNome;
         this.razaoFisicaCPF = razaoFisicaCPF;
     }
-    public String toString(){
-        return  "A empresa, de procuração jurídica " + this.getEmpresaNome() +" de CNPJ: " + this.getEmpresaCnpj()+ " e procuração física "+
-                this.getRazaoFisicaNome()+ " de CPF: "+ this.getRazaoFisicaCPF() +" foi feito por: "+ this.getNome()+"." +
-                "\n"+ "dia: "+ this.getDiaCadastro()+" |" + " mês: " + this.getMesCadastro()+" |"+ " ano: "+ this.getAnoCadastro()+" |"
-                +"Vencimento do certificado dia: " +(this.getDiaCadastro()+ " mês: "+ this.getMesCadastro() + " ano: "+ (this.getAnoCadastro()+1));
-    }
-
 }

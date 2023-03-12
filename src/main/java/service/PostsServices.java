@@ -6,7 +6,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import static service.Operacoes.TelaInicial;
 public class PostsServices {
-    static ArrayList<Post> addPost = new ArrayList<Post>();
+    static ArrayList<Post> addPost = new ArrayList<>();
     public static void CriarPost() {
 
         Post posts = new Post();
