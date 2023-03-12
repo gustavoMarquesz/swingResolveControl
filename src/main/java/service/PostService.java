@@ -11,12 +11,12 @@ public class PostService {
 
         Post posts = new Post();
         posts.setNome(JOptionPane.showInputDialog("Seu nome: "));
-        if(posts.getNome().isEmpty()){
+        while(posts.getNome().isEmpty()){
             posts.setNome(JOptionPane.showInputDialog("Não aceitamos valor nulo neste campo \n insira seu nome novamente "));
         }
         posts.setEmail(JOptionPane.showInputDialog("Seu email "));
-        if(posts.getEmail().isEmpty()){
-            posts.setNome(JOptionPane.showInputDialog("Não aceitamos valor nulo neste campo \n insira seu email novamente "));
+        while(posts.getEmail().isEmpty()){
+            posts.setEmail(JOptionPane.showInputDialog("Não aceitamos valor nulo neste campo \n insira seu email novamente "));
         }
         posts.setNumeroCelular(JOptionPane.showInputDialog("Seu celular: "));
         posts.setEmpresaNome(JOptionPane.showInputDialog("Nome da empresa: "));
@@ -25,17 +25,17 @@ public class PostService {
         posts.setRazaoFisicaCPF(JOptionPane.showInputDialog("Procuração física - CPF: "));
 
         posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no dia: ")));
-        if(posts.getDiaCadastro() <=0){
+        while(posts.getDiaCadastro() <=0){
             posts.setDiaCadastro(Integer.parseInt(JOptionPane.showInputDialog("O dia precisa ser maior que 0. \n Insira novamente ")));
         }
 
         posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no mês: ")));
-        if(posts.getMesCadastro() <=0 || posts.getMesCadastro() >12){
+        while(posts.getMesCadastro() <=0 || posts.getMesCadastro() >12){
             posts.setMesCadastro(Integer.parseInt(JOptionPane.showInputDialog("Só existem mês de 1 à 12. \n Insira novamente ")));
         }
 
         posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("Feito no ano: ")));
-        if(posts.getAnoCadastro() <= 2000){
+        while(posts.getAnoCadastro() <= 2000){
             posts.setAnoCadastro(Integer.parseInt(JOptionPane.showInputDialog("O ano precisa ser superior a 2000. \n Insira novamente ")));
         }
         addPost.add(posts);
@@ -50,7 +50,6 @@ public class PostService {
 
             String[] colunas = {"Nome", "Email", "Celular", "Empresa", "CNPJ", "Pro.Fisica-Nome", "Proc.Fisica-CPF", "Dia do cadastro", "Mês do cadastro", "Ano do cadastro"};
             DefaultTableModel modelo = new DefaultTableModel(colunas, 0);
-
 
             //fiz um loop no array para percorrer os itens - loop for each
             for (Post posts : addPost) {
