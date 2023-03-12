@@ -2,12 +2,11 @@ package model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import javax.swing.*;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class Post extends  Pessoa{
+public class Post extends Funcionario {
     static String empresaDados= "| nosso CNPJ: 14.162.031/0001-53 |";
     private int diaCadastro;
     private int mesCadastro;

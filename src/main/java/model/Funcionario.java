@@ -8,12 +8,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pessoa {
+public class Funcionario {
     private String nome;
     private String email;
     private String numeroCelular;
 
-    public Pessoa(String nome, String email) {
+    public Funcionario(String nome, String email) {
         this.nome = nome;
         this.email = email;
     }
